@@ -1,0 +1,29 @@
+{
+  "name": "promise-message",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "example-node": "ts-node example/node-process/main.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yylgit/message-channel.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yylgit/message-channel/issues"
+  },
+  "homepage": "https://github.com/yylgit/message-channel#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
