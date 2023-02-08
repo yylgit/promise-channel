@@ -1,10 +1,11 @@
 import http from 'http'
 import PromiseMessageChannel from "../../src/index";
+import {IMessagePayload} from "./types";
 
-const channel = new PromiseMessageChannel({
+const channel = new PromiseMessageChannel<IMessagePayload, IMessagePayload>({
   senderId: 'child1',
   sendMessage: process.send?.bind(process)!,
-  messageHandler: (message: any) => {
+  messageHandler: (message) => {
     console.log('child2 receive message: ', message)
     message.sendResponse({event: 'res from child2'})
   }

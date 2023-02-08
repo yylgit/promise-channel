@@ -6,13 +6,13 @@
   "module": "dist/es/index.js",
   "scripts": {
     "dev": "tsc -w",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-es.json",
     "example-node": "ts-node example/node-process/main.ts",
     "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yylgit/message-channel.git"
+    "url": "git+https://github.com/yylgit/promise-message.git"
   },
   "files": [
     "dist"
@@ -20,9 +20,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yylgit/message-channel/issues"
+    "url": "https://github.com/yylgit/promise-message/issues"
   },
-  "homepage": "https://github.com/yylgit/message-channel#readme",
+  "homepage": "https://github.com/yylgit/promise-message#readme",
   "devDependencies": {
     "@types/node": "^18.11.18"
   }

@@ -1,28 +1,28 @@
 import process from "process";
-import PromiseMessageChannel from "../../src/index";
+import PromiseMessageChannel, {IHandleMessage} from "../../src/index";
 import { fork } from "child_process";
 import http from 'http'
 import path from 'path'
+import {IMessagePayload} from "./types";
 
 const cp1 = fork(path.join(__dirname, "./child1"));
 const cp2 = fork(path.join(__dirname, "./child2"));
 
-
-const channel1 = new PromiseMessageChannel({
+const channel1 = new PromiseMessageChannel<IMessagePayload, IMessagePayload>({
   senderId: "main",
   sendMessage: cp1.send.bind(cp1),
   messageHandler
 });
 cp1.on('message', channel1.messageHandler)
 
-const channel2 = new PromiseMessageChannel({
+const channel2 = new PromiseMessageChannel<IMessagePayload, IMessagePayload>({
   senderId: "main",
   sendMessage: cp2.send.bind(cp2),
   messageHandler
 });
 cp2.on('message', channel2.messageHandler)
 
-function messageHandler(message: any) {
+function messageHandler(message: IHandleMessage<IMessagePayload, IMessagePayload>) {
   console.log('main receive message: ', message)
   if (message.payload.to === "main") {
     return message.sendResponse({event: 'res from main'})
