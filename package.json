@@ -8,6 +8,7 @@
     "dev": "tsc -w",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig-es.json",
     "example-node": "ts-node example/node-process/main.ts",
+    "example-postmessage": "serve",
     "prepublishOnly": "npm run build"
   },
   "repository": {

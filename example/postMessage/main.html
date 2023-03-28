@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  
+  
+</head>
+<body>
+  <div class="row">
+    <div class="col50">
+      <div class="row">
+        <div class="col50">
+          <h1>main</h1>
+          <h2>来自iframe的消息</h2>
+          <div class="message-box" id="receivedMessage"></div>
+          <h2>发送成功的消息</h2>
+          <div class="message-box" id="sendSuccessMessage"></div>
+        </div>
+        <div class="col50">
+          <textarea id="sendText" class="send-textarea"></textarea>
+          <button id="sendMessageBtn">发消息</button>
+        </div>
+      </div>
+    </div>
+    <div class="col50">
+      <iframe class="iframe" src="frame.html" id="frame"></iframe>
+    </div>
+  </div>
+ 
+  <script type="module" src="./main.js"></script>
+
+</body>
+</html>

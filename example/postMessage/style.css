@@ -1,0 +1,28 @@
+
+    .row  {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .col50 {
+      width: 50%;
+      height: 100%;
+    }
+    .iframe {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #000;
+    }
+    .send-textarea {
+      width: 90%;
+      height: 50%;
+    }
+
+    .message-box {
+      height: 200px;
+      border: 1px solid #000;
+      overflow: scroll;
+    }
+  
